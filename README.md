@@ -1,5 +1,5 @@
 # paktoken-erc20-hardhat
-ERC-20 Token
+<h1>ERC-20 Token</h1>
 An Ethereum Token is an incredibly powerful feature of the Ethereum virtual machine, as it can represent virtually anything from financial assets, to skills of a game character, to a fiat currency, and so much more
 Why build your own ERC-20 token?
 The ERC-20 token standard is the most popular way to create fungible cryptocurrencies on Ethereum and EVM-compatible blockchains, and therefore allows builders and creators to develop digital assets for their protocol, marketplace, metaverse, or community.
