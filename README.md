@@ -43,56 +43,56 @@ Open a new .sol file and name the .sol file the same name as your token
 Note: To create and work with your smart contract file, you must have a name that matches the name of your token. For example, to create a token named Web3Token, your contract file name should be Web3Token.sol.
 <br>
 Copy and paste this code snippet based on the OpenZeppelin ERC 20 implementation:
-
-//SPDX-License-Identifier: Unlicense
+<br>
+//SPDX-License-Identifier: Unlicense<br>
 pragma solidity ^0.8.0;
-
-import "@openzeppelin/contracts/token/ERC20/ERC20.sol"; 
+<br>
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol"; <br>
 // OpenZeppelin package contains implementation of the ERC 20 standard, which our NFT smart contract will inherit
-
-contract GoofyGoober is ERC20 {
-    uint constant _initial_supply = 100 * (10**18); 
-    // setting variable for how many of your own tokens are initially put into your wallet, feel free to edit the first number but make sure to leave the second number because we want to make sure our supply has 18 decimals
-    /* ERC 20 constructor takes in 2 strings, feel free to change the first string to the name of your token name, and the second string to the corresponding symbol for your custom token name */
-
+<br>
+contract GoofyGoober is ERC20 {<br>
+    uint constant _initial_supply = 100 * (10**18); <br>
+    // setting variable for how many of your own tokens are initially put into your wallet, feel free to edit the first number but make sure to leave the second number because we want to make sure our supply has 18 decimals<br>
+    /* ERC 20 constructor takes in 2 strings, feel free to change the first string to the name of your token name, and the second string to the corresponding symbol for your custom token name */<br>
+<br>
     constructor() ERC20("GoofyGoober", "GG") public {
-        _mint(msg.sender, _initial_supply);
-    }
-}
-  The token symbol you choose, in our case "GG" can be any arbitrary character length but do keep in mind that some UIs may display ones that are too long differently.
-  Feel free to edit the initial supply by changing the 100 to how many tokens you would like your initial supply to be - we put 100 because there are very few true Goofy Goobers in the world! You can put any number you'd like for this - make sure to leave the (10**18) as that multiplies the number we want as our supply to have 18 decimals.
+        _mint(msg.sender, _initial_supply);<br>
+    }<br>
+}<br>
+  The token symbol you choose, in our case "GG" can be any arbitrary character length but do keep in mind that some UIs may display ones that are too long differently.<br>
+  Feel free to edit the initial supply by changing the 100 to how many tokens you would like your initial supply to be - we put 100 because there are very few true Goofy Goobers in the world! You can put any number you'd like for this - make sure to leave the (10**18) as that multiplies the number we want as our supply to have 18 decimals.<br>
 
-<h1> Write a Deployment Script for your ERC-20 Token</h1>
-Now that your token contract is written, write your smart contract deployment script by:
-Navigating to the /scripts folder
+<h1> Write a Deployment Script for your ERC-20 Token</h1><br>
+Now that your token contract is written, write your smart contract deployment script by:<br>
+Navigating to the /scripts folder<br>
 
-Creating a new file called deploy.js
-Opening the deploy.js file
+Creating a new file called deploy.js<br>
+Opening the deploy.js file<br>
 
-Copying and pasting this ERC-20 deployment code snippet:
+Copying and pasting this ERC-20 deployment code snippet:<br>
 deploy.js
 <br>
-async function main() {
+async function main() {<br>
 
-  const [deployer] = await ethers.getSigners();
-  console.log("Deploying contracts with the account:", deployer.address);
-  const weiAmount = (await deployer.getBalance()).toString();
-  console.log("Account balance:", (await ethers.utils.formatEther(weiAmount)));
-  // make sure to replace the "GoofyGoober" reference with your own ERC-20 name!
-  const Token = await ethers.getContractFactory("GoofyGoober");
-  const token = await Token.deploy();
-  console.log("Token address:", token.address);
-}
-main()
-  .then(() => process.exit(0))
-  .catch((error) => {
-    console.error(error);
-    process.exit(1);
-});
+  const [deployer] = await ethers.getSigners();<br>
+  console.log("Deploying contracts with the account:", deployer.address);<br>
+  const weiAmount = (await deployer.getBalance()).toString();<br>
+  console.log("Account balance:", (await ethers.utils.formatEther(weiAmount)));<br>
+  // make sure to replace the "GoofyGoober" reference with your own ERC-20 name!<br>
+  const Token = await ethers.getContractFactory("GoofyGoober");<br>
+  const token = await Token.deploy();<br>
+  console.log("Token address:", token.address);<br>
+}<br>
+main()<br>
+  .then(() => process.exit(0))<br>
+  .catch((error) => {<br>
+    console.error(error);<br>
+    process.exit(1);<br>
+});<br>
 
 <h1> Deploy your ERC-20 Token to Goerli</h1>
-To deploy your ERC-20 token, navigate to your root directory and run the following command: 
-npx hardhat run scripts/deploy.js --network goerli
+To deploy your ERC-20 token, navigate to your root directory and run the following command: <br>
+npx hardhat run scripts/deploy.js --network goerli<br>
 <br>
-Your contract will be compiled and deployed to the Goerli network! You should see a message appear with information about the smart contracts you are deploying including your account address, account balance, and token address.
+Your contract will be compiled and deployed to the Goerli network! You should see a message appear with information about the smart contracts you are deploying including your account address, account balance, and token address.<br>
 
