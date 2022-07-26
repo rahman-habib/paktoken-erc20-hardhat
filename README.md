@@ -20,11 +20,26 @@ ERC-20 tokens are fungible (can be interchanged) because they have the same valu
 ### How to Create an ERC-20 Token
 First, create an Alchemy account, setup Metamask, HardHat, and Solidity for this project.
 
-Next, enter `mkdir my-token` and `cd my-token` to create a folder for your project and change directories to your my-token folder, then `run npm` init
+Next, enter `mkdir my-token` and `cd my-token` to create a folder for your project and change directories to your my-token folder, then `run npm init`
+
 `mk my-token`
 
 `cd my-token`
 
 `npm init`
+
+Next, go to the my-token project root directory and type mkdir contracts and mkdir scripts into your command line to create two new folders that will organize your ERC-20 smart contracts and your deployment scripts:
+
+`mkdir contracts`
+
+`mkdir scripts`
+## 2. Write ERC-20 Token Smart Contract
+Here’s how to write the token contract for your ERC-20 token using Solidity, which is like Java and JavaScript, or C and C++:
+
+Open up the my-token project in your code editor.
+
+Navigate to your /contracts folder
+
+Open a new .sol file and name the .sol file the same name as your token
 
 
