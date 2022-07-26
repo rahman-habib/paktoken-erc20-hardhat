@@ -43,7 +43,7 @@ Open a new .sol file and name the .sol file the same name as your token
 Note: To create and work with your smart contract file, you must have a name that matches the name of your token. For example, to create a token named Web3Token, your contract file name should be Web3Token.sol.
 <br>
 Copy and paste this code snippet based on the OpenZeppelin ERC 20 implementation:
-<code>
+```js
 //SPDX-License-Identifier: Unlicense<br>
 pragma solidity ^0.8.0;
 
@@ -58,7 +58,8 @@ contract GoofyGoober is ERC20 {
     constructor() ERC20("GoofyGoober", "GG") public {
         _mint(msg.sender, _initial_supply);
     }
-}</code>
+}
+    ```
   The token symbol you choose, in our case "GG" can be any arbitrary character length but do keep in mind that some UIs may display ones that are too long differently.<br>
   Feel free to edit the initial supply by changing the 100 to how many tokens you would like your initial supply to be - we put 100 because there are very few true Goofy Goobers in the world! You can put any number you'd like for this - make sure to leave the (10**18) as that multiplies the number we want as our supply to have 18 decimals.<br>
 
