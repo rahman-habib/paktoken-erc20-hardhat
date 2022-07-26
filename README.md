@@ -6,7 +6,9 @@ The ERC-20 token standard is the most popular way to create fungible cryptocurre
 This tutorial will teach you how to create your own ERC-20 token on Ethereum’s Rinkeby testnet using Alchemy, MetaMask, HardHat, and Solidity code snippets. At the end of this tutorial you will be able to deploy your own ERC-20 token smart contract. The estimated time to complete this guide is 15 minutes.
 ### What is the ERC-20 token standard?
  The ERC-20 token standard ensures that all tokens have the same properties, including that all tokens are fungible (any one token is exactly equal to any other token), and no tokens have special properties or rights associated with them.
+ 
 This means that for a token to follow the ERC-20 token standard, it must implement the following API methods and events:
+
 - totalSupply - a method that defines the total supply of your tokens, and stops creating new tokens when the totalSupply limit is reached
 - balanceOf - a method that returns the number of tokens a wallet address contains
 - transfer - a method that transfers in a certain amount of tokens from the total supply and sends it to a user
@@ -16,4 +18,7 @@ This means that for a token to follow the ERC-20 token standard, it must impleme
 
 ERC-20 tokens are fungible (can be interchanged) because they have the same value and properties.
 ### How to Create an ERC-20 Token
+First, create an Alchemy account, setup Metamask, HardHat, and Solidity for this project.
+
+Next, enter 'mkdir my-token' and 'cd my-token' to create a folder for your project and change directories to your my-token folder, then 'run npm' init
 
