@@ -14,5 +14,6 @@ This means that for a token to follow the ERC-20 token standard, it must impleme
 - approve - verifies whether a smart contract is allowed to allocate a certain amount of tokens to a user, considering the total supply
 - allowance - checks if a user has enough balance to send a tokens to another user
 
+ERC-20 tokens are fungible (can be interchanged) because they have the same value and properties.
 ### How to Create an ERC-20 Token
 
