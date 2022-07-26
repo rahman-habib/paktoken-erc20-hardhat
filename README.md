@@ -35,11 +35,40 @@ Next, go to the my-token project root directory and type mkdir contracts and mkd
 `mkdir scripts`
 ## 2. Write ERC-20 Token Smart Contract
 Here’s how to write the token contract for your ERC-20 token using Solidity, which is like Java and JavaScript, or C and C++:
-
 Open up the my-token project in your code editor.
+Navigate to your /contracts folder.
+Open a new .sol file and name the .sol file the same name as your token.
+**Note**: To create and work with your smart contract file, you must have a name that matches the name of your token. For example, to create a token named Web3Token, your contract file name should be Web3Token.sol.
+this code snippet based on the OpenZeppelin ERC 20 implementation:
 
-Navigate to your /contracts folder
+``` js
+1
+//SPDX-License-Identifier: Unlicense
+2
+pragma solidity ^0.8.0;
+3
+​
+4
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";  // OpenZeppelin package contains implementation of the ERC 20 standard, which our NFT smart contract will inherit
+5
+​
+6
+contract GoofyGoober is ERC20 {
+7
+    uint constant _initial_supply = 100 * (10**18);  // setting variable for how many of your own tokens are initially put into your wallet, feel free to edit the first number but make sure to leave the second number because we want to make sure our supply has 18 decimals
+8
+​
+9
+    /* ERC 20 constructor takes in 2 strings, feel free to change the first string to the name of your token name, and the second string to the corresponding symbol for your custom token name */
+10
+    constructor() ERC20("GoofyGoober", "GG") public {
+11
+        _mint(msg.sender, _initial_supply);
+12
+    }
+13
+}
 
-Open a new .sol file and name the .sol file the same name as your token
+```
 
 
