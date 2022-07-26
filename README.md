@@ -92,6 +92,7 @@ main()
 ```
 ## 4. Deploy your ERC-20 Token to Goerli
 To deploy your ERC-20 token, navigate to your root directory and run the following command: 
+
  `npx hardhat run scripts/deploy.js --network goerli`
  
  Your contract will be compiled and deployed to the Goerli network! You should see a message appear with information about the smart contracts you are deploying including your account address, account balance, and token address.
