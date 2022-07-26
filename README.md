@@ -20,5 +20,13 @@ ERC-20 tokens are fungible (can be interchanged) because they have the same valu
 ### How to Create an ERC-20 Token
 First, create an Alchemy account, setup Metamask, HardHat, and Solidity for this project.
 
-Next, enter 'mkdir my-token' and 'cd my-token' to create a folder for your project and change directories to your my-token folder, then 'run npm' init
+Next, enter `mkdir my-token` and `cd my-token` to create a folder for your project and change directories to your my-token folder, then `run npm` init
+`
+mk my-token
+2
+cd my-token
+3
+npm init
+
+`
 
