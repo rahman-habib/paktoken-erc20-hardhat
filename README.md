@@ -57,5 +57,44 @@ contract GoofyGoober is ERC20 {
 }
 
 ```
+- The token symbol you choose, in our case "GG" can be any arbitrary character length but do keep in mind that some UIs may display ones that are too long differently.
+- Feel free to edit the initial supply by changing the 100 to how many tokens you would like your initial supply to be - we put 100 because there are very few true Goofy Goobers in the world! You can put any number you'd like for this - make sure to leave the (10**18) as that multiplies the number we want as our supply to have 18 decimals.
+## 3. Write a Deployment Script for your ERC-20 Token.
+
+Now that your token contract is written, write your smart contract deployment script by:
+Navigating to the /scripts folder
+Creating a new file called `deploy.js`
+Opening the `deploy.js` file
+ ERC-20 deployment code snippet:
+ ``` js
+ async function main() {
+  const [deployer] = await ethers.getSigners();
+
+  console.log("Deploying contracts with the account:", deployer.address);
+
+  const weiAmount = (await deployer.getBalance()).toString();
+  
+  console.log("Account balance:", (await ethers.utils.formatEther(weiAmount)));
+
+  // make sure to replace the "GoofyGoober" reference with your own ERC-20 name!
+  const Token = await ethers.getContractFactory("GoofyGoober");
+  const token = await Token.deploy();
+
+  console.log("Token address:", token.address);
+}
+
+main()
+  .then(() => process.exit(0))
+  .catch((error) => {
+    console.error(error);
+    process.exit(1);
+});
+```
+## 4. Deploy your ERC-20 Token to Goerli
+To deploy your ERC-20 token, navigate to your root directory and run the following command: 
+ `npx hardhat run scripts/deploy.js --network goerli`
+ 
+ Your contract will be compiled and deployed to the Goerli network! You should see a message appear with information about the smart contracts you are deploying including your account address, account balance, and token address.
+
 
 
