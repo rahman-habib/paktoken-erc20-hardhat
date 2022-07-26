@@ -42,31 +42,18 @@ Open a new .sol file and name the .sol file the same name as your token.
 this code snippet based on the OpenZeppelin ERC 20 implementation:
 
 ``` js
-1
 //SPDX-License-Identifier: Unlicense
-2
 pragma solidity ^0.8.0;
-3
-​
-4
+
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";  // OpenZeppelin package contains implementation of the ERC 20 standard, which our NFT smart contract will inherit
-5
-​
-6
+
 contract GoofyGoober is ERC20 {
-7
     uint constant _initial_supply = 100 * (10**18);  // setting variable for how many of your own tokens are initially put into your wallet, feel free to edit the first number but make sure to leave the second number because we want to make sure our supply has 18 decimals
-8
-​
-9
+
     /* ERC 20 constructor takes in 2 strings, feel free to change the first string to the name of your token name, and the second string to the corresponding symbol for your custom token name */
-10
     constructor() ERC20("GoofyGoober", "GG") public {
-11
         _mint(msg.sender, _initial_supply);
-12
     }
-13
 }
 
 ```
